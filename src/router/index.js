@@ -13,6 +13,24 @@ import SignUp from '../views/SignUp.vue';
 
 import Login from '../views/LogIn.vue';
 
+import AddClientTemplateVue from '@/views/dashboard/AddClientTemplate.vue';
+
+import AddInvoiceTemplateVue from '@/views/dashboard/AddInvoiceTemplate.vue';
+
+import ClientTemplateVue from '@/views/dashboard/ClientTemplate.vue';
+
+import ClientsTemplateVue from '@/views/dashboard/ClientsTemplate.vue';
+
+import EditClientTemplateVue from '@/views/dashboard/EditClientTemplate.vue';
+
+import EditTeamTemplateVue from '@/views/dashboard/EditTeamTemplate.vue';         
+
+import InvoiceTemplateVue from '@/views/dashboard/InvoiceTemplate.vue';
+
+import InvoicesTemplateVue from '@/views/dashboard/InvoicesTemplate.vue';
+
+import MyAccountTemplateVue from '@/views/dashboard/MyAccountTemplate.vue';
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +68,69 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: Login
+    },
+
+    // AddClientTemplate view
+    {
+      path: '',
+      name: 'AddClient',
+      component: AddClientTemplateVue
+    },
+
+    // AddInvoiceTemplate view
+    {
+      path: '',
+      name: 'AddInvoice',
+      component: AddInvoiceTemplateVue
+    },
+
+    // ClientTemplate view
+    {
+      path: '',
+      name: 'Client',
+      component: ClientTemplateVue
+    },
+
+    // ClientsTemplate view
+    {
+      path: '',
+      name: 'Clients',
+      component: ClientsTemplateVue
+    },
+
+    // EditClientTemplate view
+    {
+      path: '',
+      name: 'EditClient',
+      component: EditClientTemplateVue
+    },
+
+    // EditTeamTemplate view
+    {
+      path: '',
+      name: 'EditTeam',
+      component: EditTeamTemplateVue
+    },
+
+    // InvoiceTemplate view
+    {
+      path: '',
+      name: 'Invoice',
+      component: InvoiceTemplateVue
+    },
+
+    // InvoicesTemplate view
+    {
+      path: '',
+      name: 'Invoices',
+      component: InvoicesTemplateVue
+    },
+
+    // MyAccountTemplate view
+    {
+      path: '',
+      name: 'MyAccount',
+      component: MyAccountTemplateVue
     }
     
   ]

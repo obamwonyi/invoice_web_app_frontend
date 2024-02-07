@@ -2,7 +2,7 @@
   import router from '@/router';
 import axios from 'axios';
   import { toast } from 'bulma-toast';
-  import fileDownload from 'js-file-download';
+  // import fileDownload from 'js-file-download';
   import { ref, onMounted } from 'vue';
   
   const invoice = ref({});
@@ -23,19 +23,19 @@ import axios from 'axios';
       });
   };
   
-  const getPdf = () => {
-    const invoiceID = router.params.id;
+  // const getPdf = () => {
+  //   const invoiceID = router.params.id;
   
-    axios.get(`/api/v1/invoices/${invoiceID}/generate_pdf/`, {
-        responseType: 'blob',
-      })
-      .then(res => {
-        fileDownload(res.data, `invoice_${invoiceID}.pdf`);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+  //   axios.get(`/api/v1/invoices/${invoiceID}/generate_pdf/`, {
+  //       responseType: 'blob',
+  //     })
+  //     .then(res => {
+  //       fileDownload(res.data, `invoice_${invoiceID}.pdf`);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // };
   
   const getStatusLabel = () => {
     return invoice.value.is_paid ? 'Is paid' : 'Is not paid';

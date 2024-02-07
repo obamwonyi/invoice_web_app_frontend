@@ -1,55 +1,54 @@
 <script setup>
-  import router from '@/router';
-import axios from 'axios';
-  import { useStore } from 'vuex';
+//   import router from '@/router';
+// import axios from 'axios';
   
-  import { ref } from 'vue'
+//   import { ref } from 'vue'
 
-  const team = ref({});
+//   const team = ref({});
   
-  const getOrCreateTeam = async () => {
-    try {
-      const response = await axios.get('/api/v1/teams/');
-      team.value = response.data[0];
-    } catch (error) {
-      console.log(JSON.stringify(error));
-    }
-  };
+//   const getOrCreateTeam = async () => {
+//     try {
+//       const response = await axios.get('/api/v1/teams/');
+//       team.value = response.data[0];
+//     } catch (error) {
+//       console.log(JSON.stringify(error));
+//     }
+//   };
 
-  //for use case error
-  let x = 2
-  if(1 == x)
-  {
-    getOrCreateTeam();
-  }
+//   //for use case error
+//   let x = 2
+//   if(1 == x)
+//   {
+//     getOrCreateTeam();
+//   }
 
   
-  const logout = () => {
-    axios.post("/api/v1/token/logout/")
-      .then(response => {
-        axios.defaults.headers.common["Authorization"] = "";
-        //for use case error
-        response
+//   const logout = () => {
+//     axios.post("/api/v1/token/logout/")
+//       .then(response => {
+//         axios.defaults.headers.common["Authorization"] = "";
+//         //for use case error
+//         response
   
-        localStorage.removeItem("username");
-        localStorage.removeItem("userid");
-        localStorage.removeItem("token");
+//         localStorage.removeItem("username");
+//         localStorage.removeItem("userid");
+//         localStorage.removeItem("token");
   
-        const store = useStore();
-        store.commit('removeToken');
+//         const store = useStore();
+//         store.commit('removeToken');
   
-        router.push('/');
-      })
-      .catch(error => {
-        if (error.response) {
-          console.log(JSON.stringify(error.response.data));
-        } else if (error.message) {
-          console.log(JSON.stringify(error.message));
-        } else {
-          console.log(JSON.stringify(error));
-        }
-      });
-  };
+//         router.push('/');
+//       })
+//       .catch(error => {
+//         if (error.response) {
+//           console.log(JSON.stringify(error.response.data));
+//         } else if (error.message) {
+//           console.log(JSON.stringify(error.message));
+//         } else {
+//           console.log(JSON.stringify(error));
+//         }
+//       });
+//   };
 </script>
   
 
